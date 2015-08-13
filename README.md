@@ -4,9 +4,13 @@
 
 ## tools
 
-- ionic
-- cordova
-- AngularJS
-- gulp.js
-- node.js
-- Sass
+- [ionic](http://ionicframework.com/)
+- [gulp.js](http://gulpjs.com/)
+- [node.js](https://nodejs.org/)
+- [Sass](http://sass-lang.com/)
+
+## 参考URL
+
+- [https://gist.github.com/blackjid/10297598](https://gist.github.com/blackjid/10297598)  
+  `gulpfile.js`の設定で大変役に立ちました。livereloadができるように。
+- [ionic Documentation](http://ionicframework.com/docs/)

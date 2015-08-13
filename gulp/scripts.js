@@ -1,19 +1,16 @@
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var sourcemaps = require('gulp-sourcemaps');
-var uglify = require('gulp-uglify');
-var ngAnnotate = require('gulp-ng-annotate');
+var gulp = require('gulp'),
+    plugins = require('gulp-load-plugins')({ camelize: true });
 
 gulp.task('js', function () {
     gulp.src(['ng/module.js', 'ng/**/*.js'])
-        .pipe(sourcemaps.init())
-        .pipe(concat('app.js'))
-        .pipe(ngAnnotate())
-        .pipe(uglify({mangle: false}))
-        .pipe(sourcemaps.write())
+		.pipe(plugins.plumber())
+		// ↓concatで更新されたのしか出力されなさそう...
+		// .pipe(plugins.changed(path.jsDest))
+        .pipe(plugins.sourcemaps.init())
+        .pipe(plugins.concat('app.js'))
+        .pipe(plugins.ngAnnotate())
+        .pipe(plugins.uglify({mangle: false}))
+        .pipe(plugins.sourcemaps.write())
         .pipe(gulp.dest('www/js'))
-});
-
-gulp.task('watch:js', ['js'], function () {
-    gulp.watch('ng/**/*.js', ['js'])
+		.pipe(plugins.connect.reload());
 });
