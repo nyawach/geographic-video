@@ -8,7 +8,6 @@ gulp.task('js', function () {
 		// .pipe(plugins.changed(path.jsDest))
         .pipe(plugins.sourcemaps.init())
         .pipe(plugins.concat('app.js'))
-        .pipe(plugins.ngAnnotate())
         .pipe(plugins.uglify({mangle: false}))
         .pipe(plugins.sourcemaps.write())
         .pipe(gulp.dest('www/js'))

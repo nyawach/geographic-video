@@ -1,5 +1,4 @@
-var gulp = require('gulp'),
-    plugins = require('gulp-load-plugins')({ camelize: true });
+var gulp = require('gulp');
 
 gulp.task('watch', function() {
     gulp.watch(['./html/**/*.html'], ['html']);
