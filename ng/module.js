@@ -25,26 +25,19 @@ gvApp.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
 });
 
-gvApp.factory('jsonData', function($http){
-  return {
-    getData: function() {
-      return $http.get('data/location.json')
-        .success(function(data, status, headers, config) {
-          return data;
-        });
-    }
-  }
-});
+
+
 
 gvApp.controller('naviCtrl', function($scope, $ionicPopup, $ionicLoading, $compile){
 
+  var destData = $scope.locations[$scope.activeLocationIndex];
   var currentPos = {
         lat: 33.560942,
         lng: 130.430419
       },
       destPos = {
-        lat: 33.560001,
-        lng: 130.429138
+        lat: destData.lat,
+        lng: destData.lng
       };
 /*
   var currentPos = {
@@ -56,7 +49,9 @@ gvApp.controller('naviCtrl', function($scope, $ionicPopup, $ionicLoading, $compi
         lng: 130.429138        
       };
 */
-  // init google maps API with gmaps.js
+
+
+  /* init google maps API with gmaps.js */
   var map = new GMaps({
     div: "#map",
     lat: currentPos.lat,
@@ -64,20 +59,28 @@ gvApp.controller('naviCtrl', function($scope, $ionicPopup, $ionicLoading, $compi
     zoom: 17
   });
 
-  // add current position
-  map.addMarker({
-    lat: currentPos.lat,
-    lng: currentPos.lng
-  });
 
+  /* update map markers and map route */
   var updateRoute = function() {
 
     // update current geolocation
     currentPos.lat += 0.0001;
     currentPos.lng = 130.430409;
 
-    // redraw route to next destination
+    // clear map route and markers
+    map.removeMarkers();
     map.cleanRoute();
+    
+    // add current position
+    map.addMarkers([{
+      lat: currentPos.lat,
+      lng: currentPos.lng
+    }, {
+      lat: destPos.lat,
+      lng: destPos.lng
+    }]);
+    
+    // redraw route to next destination
     map.drawRoute({
       origin: [currentPos.lat, currentPos.lng],
       destination: [destPos.lat, destPos.lng],
@@ -86,8 +89,11 @@ gvApp.controller('naviCtrl', function($scope, $ionicPopup, $ionicLoading, $compi
       strokeOpacity: 0.6,
       strokeWeight: 5
     });
+
   };
 
+
+  // set interval and init
   updateRoute();
   setInterval(updateRoute, 3000);
 
