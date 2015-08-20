@@ -25,35 +25,91 @@ gvApp.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
 });
 
+gvApp.factory('jsonData', function($http){
+  return {
+    getData: function() {
+      return $http.get('data/location.json')
+        .success(function(data, status, headers, config) {
+          return data;
+        });
+    }
+  }
+});
 
 gvApp.controller('naviCtrl', function($scope, $ionicPopup, $ionicLoading, $compile){
 
+  var currentPos = {
+        lat: 33.560942,
+        lng: 130.430419
+      },
+      destPos = {
+        lat: 33.560001,
+        lng: 130.429138
+      };
+/*
+  var currentPos = {
+        lat: 33.560942,
+        lng: 130.430419
+      },
+      destPos = {
+        lat: 33.560001,
+        lng: 130.429138        
+      };
+*/
+  // init google maps API with gmaps.js
   var map = new GMaps({
     div: "#map",
-    lat: 35.710285,
-    lng: 139.77714,
-    zoom: 15
+    lat: currentPos.lat,
+    lng: currentPos.lng,
+    zoom: 17
   });
+
+  // add current position
+  map.addMarker({
+    lat: currentPos.lat,
+    lng: currentPos.lng
+  });
+
+  var updateRoute = function() {
+
+    // update current geolocation
+    currentPos.lat += 0.0001;
+    currentPos.lng = 130.430409;
+
+    // redraw route to next destination
+    map.cleanRoute();
+    map.drawRoute({
+      origin: [currentPos.lat, currentPos.lng],
+      destination: [destPos.lat, destPos.lng],
+      travelMode: 'walking',
+      strokeColor: '#ff9100',
+      strokeOpacity: 0.6,
+      strokeWeight: 5
+    });
+  };
+
+  updateRoute();
+  setInterval(updateRoute, 3000);
 
 });
 
-gvApp.controller('mainCtrl', function($scope, $ionicPopup, $timeout){
 
-  $scope.items = [
-    {title: 'タイトルその1'},
-    {title: 'タイトルその2'},
-    {title: 'タイトルその3'},
-    {title: 'タイトルその4'},
-    {title: 'タイトルその5'},
-    {title: 'タイトルその6'}
-  ];
 
+
+
+gvApp.controller('mainCtrl', ['$scope', '$http', '$ionicPopup', '$timeout', function($scope, $http, $ionicPopup, $timeout){
+
+
+  $http.get('data/location.json')
+    .success(function(data, status, headers, config) {
+      $scope.locations = data;
+    });
 
   // A confirm dialog
   $scope.showConfirm = function(index) {
 
     var confirmPopup = $ionicPopup.confirm({
-      title: $scope.items[index].title,
+      title: $scope.locations[index].name,
       template: 'この場所へ行ってみますか？'
     });
 
@@ -64,11 +120,12 @@ gvApp.controller('mainCtrl', function($scope, $ionicPopup, $timeout){
       } else {
         console.log('You are not sure');
       }
-      
-    
+
     });
 
   };
 
 
-});
+}]);
+
+
