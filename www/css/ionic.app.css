@@ -7543,12 +7543,25 @@ a.dark
 [nav-bar=stage] .back-text
 {
     position: absolute;-webkit-transition-duration: 0s;transition-duration: 0s;opacity: 0;filter: alpha(opacity=0);
-}#map
-{
-    width: 100%;height: 100%;
 }.scroll
 {
     height: 100%;
+}#map
+{
+    width: 100%;height: 100%;
+}#video
+{
+    position: relative;max-width: 560px;margin: 0 auto;
+}.video__inner
+{height: 0;
+    padding-bottom: 56.25%;
+}#video iframe,
+#video object
+{
+    position: absolute;top: 0;left: 0;width: 100%;height: 100%;
+}.button-block
+{max-width: 560px;
+    margin: 40px auto 0;
 }@media(min--moz-device-pixel-ratio:1.5),(-webkit-min-device-pixel-ratio:1.5),(min-device-pixel-ratio:1.5),(min-resolution:144dpi),(min-resolution:1.5dppx)
 {
     .bar
