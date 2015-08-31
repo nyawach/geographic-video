@@ -1,7 +1,7 @@
 var gvApp = angular.module('geographicVideo', ['ionic']);
 
 
-gvApp.config(function($stateProvider, $urlRouterProvider) {
+gvApp.config(function($sceDelegateProvider, $stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: '/',
@@ -12,25 +12,24 @@ gvApp.config(function($stateProvider, $urlRouterProvider) {
       url: '/navi',
       templateUrl: 'navi.html',
       cache: false
+    })
+    .state('video', {
+      url: '/video',
+      templateUrl: 'video.html',
+      cache: false
     });
-    // .state('main.video', {
-    //   url: '/video',
-    //   views: {
-    //     'menuContent': {
-    //       templateUrl: 'videoView.html',
-    //       controller: 'videoCtrl'
-    //     }
-    //   }
-    // });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');
+
+  // add youtube URLs to whitelist
+  $sceDelegateProvider.resourceUrlWhitelist(['self', new RegExp('^(http[s]?):\/\/(w{3}.)?youtube\.com/.+$'), '*//maps.google.com/*']);
 });
 
 
 
 
-gvApp.controller('naviCtrl', function($scope, $ionicPopup, $ionicLoading, $compile){
+gvApp.controller('naviCtrl', function($scope, $ionicPopup, $ionicLoading, $state, $compile){
 
   var destData = $scope.locations[$scope.activeLocationIndex];
   var currentPos = {
@@ -42,17 +41,6 @@ gvApp.controller('naviCtrl', function($scope, $ionicPopup, $ionicLoading, $compi
         lng: destData.lng
       };
 
-  var currentPos = {
-        lat: 33.560942,
-        lng: 130.430419
-      },
-      destPos = {
-        lat: 33.560001,
-        lng: 130.429138
-      };
-
-
-
   /* init google maps API with gmaps.js */
   var map = new GMaps({
     div: "#map",
@@ -63,7 +51,6 @@ gvApp.controller('naviCtrl', function($scope, $ionicPopup, $ionicLoading, $compi
 
 
   /* update map markers and map route */
-  
   var updateRoute = function() {
 
     // clear map route and markers
@@ -71,16 +58,16 @@ gvApp.controller('naviCtrl', function($scope, $ionicPopup, $ionicLoading, $compi
     map.cleanRoute();
 
     // update current geolocation value (for test)
-    currentPos.lat += 0.0001;
+    currentPos.lat += 0.0005;
     currentPos.lng = 130.430409;
 
     // update current geolocation value with geolocation API
     GMaps.geolocate({
 
       success: function(position) {
-        map.setCenter(position.coords.latitude, position.coords.longitude);
-        currentPos.lat = position.coords.latitude;
-        currentPos.lng = position.coords.longitude;
+        // map.setCenter(position.coords.latitude, position.coords.longitude);
+        // currentPos.lat = position.coords.latitude;
+        // currentPos.lng = position.coords.longitude;
       },
 
       error: function(error) {
@@ -125,12 +112,43 @@ gvApp.controller('naviCtrl', function($scope, $ionicPopup, $ionicLoading, $compi
       strokeWeight: 5
     });
 
+    // within range
+    if(isOn(currentPos, destPos)) {
+      
+      clearInterval(update);
+      
+      $ionicPopup.confirm({
+        title: '動画を発見！',
+        template: '動画を見てみますか?'
+      }).then(function(res) {
+        if(res) {
+          $scope.videoURL = 'https://www.youtube.com/embed/' + $scope.locations[$scope.activeLocationIndex].videoID;
+          $state.go('video');
+        } else {
+          setInterval(updateRoute, 3000);
+          console.log('You are not sure');
+        }
+      });
+    }
+
+
   };
 
 
+  var isOn = function(pos, dist) {
+    var range = 10;
+    return getDistance(pos, dist) < range;
+  };
+  //距離の計算//
+  function getDistance(pos, dist) {
+    function radians(deg) {return deg * Math.PI / 180;}
+    return 6378140 * Math.acos(Math.cos(radians(pos.lat))* Math.cos(radians(dist.lat))* Math.cos(radians(dist.lng) - radians(pos.lng))+ Math.sin(radians(pos.lat)) * Math.sin(radians(dist.lat)));
+  }
+
   // set interval and init
   updateRoute();
-  setInterval(updateRoute, 3000);
+  var update = setInterval(updateRoute, 3000);
+
 
 });
 
@@ -141,7 +159,7 @@ gvApp.controller('naviCtrl', function($scope, $ionicPopup, $ionicLoading, $compi
 gvApp.controller('mainCtrl', ['$scope', '$http', '$ionicPopup', '$timeout', '$state', function($scope, $http, $ionicPopup, $timeout, $state){
 
 
-  $http.get('data/location.json')
+  $http.get('./data/location.json')
     .success(function(data, status, headers, config) {
       $scope.locations = data;
     });
@@ -170,3 +188,11 @@ gvApp.controller('mainCtrl', ['$scope', '$http', '$ionicPopup', '$timeout', '$st
 }]);
 
 
+gvApp.controller('videoCtrl', function($scope, $ionicPopup, $state){
+
+  console.log($scope.videoURL);
+  $scope.go = function(path) {
+    $state.go(path);
+  };
+
+});

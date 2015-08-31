@@ -1,6 +1,13 @@
 
 <ion-view view-title="VIDEO">
-  <ion-content class="has-header" ng-controller="naviCtrl">
-    <div id="map"></div>
+  <ion-content class="has-header padding" ng-controller="videoCtrl">
+    <div id="video">
+    <div class="video__inner"></div>
+		<iframe src="{{videoURL}}" frameborder="0" width="560"></iframe>
+		<!-- <iframe src="https://www.youtube.com/embed/z3ep47hPM9w" frameborder="0" width="560"></iframe> -->
+    </div>
+    <a class="button button-block button-positive" ng-click="go('home')">
+		次の動画を探しに行く！
+	</a>
   </ion-content>
 </ion-view>
