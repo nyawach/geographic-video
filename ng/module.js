@@ -5,11 +5,13 @@ gvApp.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: '/',
-      templateUrl: 'index.html'
+      templateUrl: 'index.html',
+      cache: false
     })
     .state('navi', {
       url: '/navi',
-      templateUrl: 'navi.html'
+      templateUrl: 'navi.html',
+      cache: false
     });
     // .state('main.video', {
     //   url: '/video',
@@ -39,16 +41,16 @@ gvApp.controller('naviCtrl', function($scope, $ionicPopup, $ionicLoading, $compi
         lat: destData.lat,
         lng: destData.lng
       };
-/*
+
   var currentPos = {
         lat: 33.560942,
         lng: 130.430419
       },
       destPos = {
         lat: 33.560001,
-        lng: 130.429138        
+        lng: 130.429138
       };
-*/
+
 
 
   /* init google maps API with gmaps.js */
@@ -61,7 +63,9 @@ gvApp.controller('naviCtrl', function($scope, $ionicPopup, $ionicLoading, $compi
 
 
   /* update map markers and map route */
+  
   var updateRoute = function() {
+
     // clear map route and markers
     map.removeMarkers();
     map.cleanRoute();
@@ -74,9 +78,9 @@ gvApp.controller('naviCtrl', function($scope, $ionicPopup, $ionicLoading, $compi
     GMaps.geolocate({
 
       success: function(position) {
-        // map.setCenter(position.coords.latitude, position.coords.longitude);
-        // currentPos.lat = position.coords.latitude;
-        // currentPos.lng = position.coords.longitude;
+        map.setCenter(position.coords.latitude, position.coords.longitude);
+        currentPos.lat = position.coords.latitude;
+        currentPos.lng = position.coords.longitude;
       },
 
       error: function(error) {
@@ -101,7 +105,7 @@ gvApp.controller('naviCtrl', function($scope, $ionicPopup, $ionicLoading, $compi
 
     });
 
-    
+
     // add current position
     map.addMarkers([{
       lat: currentPos.lat,
@@ -110,7 +114,7 @@ gvApp.controller('naviCtrl', function($scope, $ionicPopup, $ionicLoading, $compi
       lat: destPos.lat,
       lng: destPos.lng
     }]);
-    
+
     // redraw route to next destination
     map.drawRoute({
       origin: [currentPos.lat, currentPos.lng],
@@ -134,7 +138,7 @@ gvApp.controller('naviCtrl', function($scope, $ionicPopup, $ionicLoading, $compi
 
 
 
-gvApp.controller('mainCtrl', ['$scope', '$http', '$ionicPopup', '$timeout', function($scope, $http, $ionicPopup, $timeout){
+gvApp.controller('mainCtrl', ['$scope', '$http', '$ionicPopup', '$timeout', '$state', function($scope, $http, $ionicPopup, $timeout, $state){
 
 
   $http.get('data/location.json')
@@ -152,8 +156,8 @@ gvApp.controller('mainCtrl', ['$scope', '$http', '$ionicPopup', '$timeout', func
 
     confirmPopup.then(function(res) {
       if(res) {
-        location.href = '/#/navi';
         $scope.activeLocationIndex = index;
+        $state.go('navi');
       } else {
         console.log('You are not sure');
       }
