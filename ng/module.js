@@ -23,7 +23,7 @@ gvApp.config(function($sceDelegateProvider, $stateProvider, $urlRouterProvider) 
   $urlRouterProvider.otherwise('/');
 
   // add youtube URLs to whitelist
-  $sceDelegateProvider.resourceUrlWhitelist(['self', new RegExp('^(http[s]?):\/\/(w{3}.)?youtube\.com/.+$'), '*//maps.google.com/*']);
+  $sceDelegateProvider.resourceUrlWhitelist(['self', new RegExp('^(http[s]?):\/\/(w{3}.)?youtube\.com/.+$'), '**.google.com/**']);
 });
 
 
@@ -60,38 +60,6 @@ gvApp.controller('naviCtrl', function($scope, $ionicPopup, $ionicLoading, $state
     // update current geolocation value (for test)
     currentPos.lat += 0.0005;
     currentPos.lng = 130.430409;
-
-    // update current geolocation value with geolocation API
-    GMaps.geolocate({
-
-      success: function(position) {
-        // map.setCenter(position.coords.latitude, position.coords.longitude);
-        // currentPos.lat = position.coords.latitude;
-        // currentPos.lng = position.coords.longitude;
-      },
-
-      error: function(error) {
-        //エラーコードのメッセージを定義
-        var errorMessage = {
-          0: "原因不明のエラーが発生しました…。",
-          1: "位置情報の取得が許可されませんでした…。",
-          2: "電波状況などで位置情報が取得できませんでした…。",
-          3: "位置情報の取得に時間がかかり過ぎてタイムアウトしました…。",
-        };
-
-        //エラーコードに合わせたエラー内容をアラート表示
-        alert(errorMessage[error.code]);
-      },
-
-      not_supported: function() {
-        alert("Your browser does not support geolocation");
-      },
-
-      always: function() {
-      }
-
-    });
-
 
     // add current position
     map.addMarkers([{
