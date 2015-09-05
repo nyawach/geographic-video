@@ -1,4 +1,5 @@
 var gulp = require('gulp'),
+    browserSync = require('browser-sync'),
     plugins = require('gulp-load-plugins')({ camelize: true });
 
 
@@ -29,7 +30,7 @@ gulp.task('sass', function() {
         // .pipe(plugins.csslint("csslintrc.json"))
         // .pipe(plugins.csslint.reporter())
         // Reload browser
-        .pipe(plugins.connect.reload());
+        .pipe(browserSync.reload());
 });
 
 /* Style Stats でCSSの評価 */

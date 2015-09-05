@@ -5,4 +5,6 @@ node_modules/
 platforms/
 plugins/
 _shared/
+resource/
 *.sublime-workspace
+www/lib/

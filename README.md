@@ -4,7 +4,6 @@
 
 ## tools
 
-- [ionic](http://ionicframework.com/)
 - [gulp.js](http://gulpjs.com/)
 - [node.js](https://nodejs.org/)
 - [Sass](http://sass-lang.com/)

@@ -4,74 +4,98 @@
 		"selected_items":
 		[
 			[
-				"ion",
-				"ion-item	Ionic Extension"
+				"$sce",
+				"$sceProvider	AngularJS"
 			],
 			[
-				"ionitem",
-				"ionic-toggle-calm	Ionic Calm Toggle"
+				"clear",
+				"clearInterval〔function〕"
 			],
 			[
-				"ion-buto",
-				"ionic-button-positive	Ionic Button"
+				"des",
+				"destPos"
 			],
 			[
-				"ion-",
-				"ionic-card	Ionic Card"
+				"current",
+				"currentPos"
 			],
 			[
-				"p",
-				"plugins"
+				"gunma",
+				"gunman_pic01.jpg	w:1280 h:768"
+			],
+			[
+				"gunman_",
+				"gunman_pic02.jpg	w:1280 h:720"
+			],
+			[
+				"g",
+				"gunman_thumb.jpg	w:240 h:240"
+			],
+			[
+				"vvvvj_",
+				"vvvvj_ss01"
+			],
+			[
+				"vvvj",
+				"vvvvj_ss01.png	w:744 h:697"
+			],
+			[
+				"column__",
+				"column__box	(style.scss)"
+			],
+			[
+				"column",
+				"column__wrap	(style.scss)"
+			],
+			[
+				"item__thumb",
+				"item__thumbWrap	(index.html)"
+			],
+			[
+				"trnaslate",
+				"translateX	(_circle.scss)"
+			],
+			[
+				"item__",
+				"item__thumb"
+			],
+			[
+				"about__",
+				"about__title	(index.html)"
+			],
+			[
+				"index",
+				"index2.html"
+			],
+			[
+				"pro",
+				"proxy"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "gulp/scripts.js",
+			"file": "src/index.html",
 			"settings":
 			{
-				"buffer_size": 512,
+				"buffer_size": 1772,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "html/index.html",
+			"file": "src/js/module.js",
 			"settings":
 			{
-				"buffer_size": 1024,
+				"buffer_size": 757,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "html/navi.html",
+			"file": "www/data/location.json",
 			"settings":
 			{
-				"buffer_size": 321,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "gulp/watch.js",
-			"settings":
-			{
-				"buffer_size": 204,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "ng/module.js",
-			"settings":
-			{
-				"buffer_size": 2847,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "scss/ionic.app.scss",
-			"settings":
-			{
-				"buffer_size": 895,
+				"buffer_size": 481,
 				"line_ending": "Unix"
 			}
 		}
@@ -83,35 +107,42 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 101.0,
-		"last_filter": "install",
+		"height": 400.0,
+		"last_filter": "remove",
 		"selected_items":
 		[
-			[
-				"install",
-				"Package Control: Install Package"
-			],
 			[
 				"remove",
 				"Package Control: Remove Package"
 			],
 			[
-				"remo",
-				"Package Control: Remove Package"
+				"install",
+				"Package Control: Install Package"
 			],
 			[
-				"isntall",
+				"insta",
 				"Package Control: Install Package"
+			],
+			[
+				"show",
+				"TypeScript: ShowErrorList"
+			],
+			[
+				"gulp",
+				"Gulp: Show panel"
+			],
+			[
+				"package",
+				"Preferences: Browse Packages"
 			]
 		],
-		"width": 529.0
+		"width": 544.0
 	},
 	"console":
 	{
-		"height": 126.0,
+		"height": 164.0,
 		"history":
 		[
-			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
 		]
 	},
 	"distraction_free":
@@ -125,46 +156,128 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/himeno/Documents/ionic/GeographicVideo",
-		"/Users/himeno/Documents/ionic/GeographicVideo/html",
-		"/Users/himeno/Documents/ionic/GeographicVideo/ng",
-		"/Users/himeno/Documents/ionic/GeographicVideo/www",
-		"/Users/himeno/Documents/ionic/GeographicVideo/www/css",
-		"/Users/himeno/Documents/ionic/GeographicVideo/www/js"
+		"/D/Document/ionic/geographic-video",
+		"/D/Document/ionic/geographic-video/gulp",
+		"/D/Document/ionic/geographic-video/src",
+		"/D/Document/ionic/geographic-video/www",
+		"/D/Document/ionic/geographic-video/www/lib"
 	],
 	"file_history":
 	[
-		"/Users/himeno/Documents/ionic/GeographicVideo/www/css/ionic.app.css",
-		"/Users/himeno/Documents/ionic/GeographicVideo/html/index.html",
-		"/Users/himeno/Documents/ionic/GeographicVideo/gulp/watch.js",
-		"/Users/himeno/Documents/ionic/GeographicVideo/gulpfile.js",
-		"/Users/himeno/Documents/ionic/GeographicVideo/www/js/app.js",
-		"/Users/himeno/Library/Application Support/Sublime Text 3/Packages/T3S/Typescript.sublime-settings",
-		"/Users/himeno/Documents/ionic/GeographicVideo/ng/untitled.ts",
-		"/Users/himeno/Library/Application Support/Sublime Text 3/Packages/T3S/Typescript.tmLanguage",
-		"/Users/himeno/Library/Application Support/Sublime Text 3/Packages/T3S/Typescript.build.js",
-		"/Users/himeno/Documents/ionic/GeographicVideo/ng/module.ts",
-		"/Users/himeno/Documents/ionic/GeographicVideo/gulp/scripts.js",
-		"/Users/himeno/Documents/ionic/GeographicVideo/gulp/css.js",
-		"/Users/himeno/Documents/ionic/GeographicVideo/ng/module.js",
-		"/Users/himeno/Documents/ionic/GeographicVideo/.gitignore",
-		"/Users/himeno/Documents/ionic/GeographicVideo/ionic.project",
-		"/Users/himeno/Documents/ionic/GeographicVideo/README.md",
-		"/Users/himeno/Documents/ionic/GeographicVideo/package.json",
-		"/Users/himeno/Documents/ionic/GeographicVideo/config.xml"
+		"/D/Document/ionic/geographic-video/package.json",
+		"/D/Document/ionic/geographic-video/gulp/css.js",
+		"/D/Document/ionic/geographic-video/gulp/watch.js",
+		"/D/Document/ionic/geographic-video/gulpfile.js",
+		"/D/Document/ionic/geographic-video/gulp/server.js",
+		"/D/Document/ionic/geographic-video/gulp/scripts.js",
+		"/D/Document/ionic/geographic-video/gulp/html.js",
+		"/D/Document/ionic/geographic-video/www/scripts/index.js",
+		"/D/Document/ionic/geographic-video/gulp/reload.js",
+		"/D/Document/ionic/geographic-video/src/js/app.js",
+		"/D/Document/ionic/geographic-video/_shared/package.json",
+		"/D/Download/onsenui-master-detail/gulpfile.js",
+		"/D/Document/ionic/geographic-video/README.md",
+		"/D/Document/ionic/geographic-video/.gitignore",
+		"/D/Download/onsenui-master-detail/.gitignore",
+		"/D/Document/ionic/geographic-video/scss/ionic.app.scss",
+		"/D/Document/ionic/geographic-video/www/data/location.json",
+		"/D/Document/ionic/geographic-video/html/video.html",
+		"/D/Document/ionic/geographic-video/html/navi.html",
+		"/D/Document/ionic/geographic-video/html/index.html",
+		"/D/Document/ionic/geographic-video/ng/module.js",
+		"/D/Document/ionic/geographic-video/html/home.html",
+		"/D/Document/ionic/geographic-video/www/video.html",
+		"/D/Document/ionic/geographic-video/html/cideo.html",
+		"/D/Document/ionic/geographic-video/ng/gmaps.min.js",
+		"/D/Document/ionic/geographic-video/www/index.html",
+		"/D/Document/Dropbox/広報/CF/返信.txt",
+		"/D/Document/ionic/testproject/www/index.html",
+		"/D/Document/ionic/geographic-video/html/index2.html",
+		"/D/Document/GoogleDrive/SHUKATSU/common/evernote_link.txt",
+		"/D/Document/ionic/geographic-video/www/js/app.js",
+		"/D/Document/ionic/geographic-video/ng/gv.js",
+		"/D/Document/ionic/geographic-video/_shared/gulpfile.js",
+		"/D/Document/ionic/geographic-video/ionic.project",
+		"/D/Document/ionic/testproject/gulpfile.js",
+		"/D/Document/ionic/geographic-video/ng/todoCtrl.js.js",
+		"/D/Document/ionic/geographic-video/ng/untitled.js",
+		"/D/Document/ionic/geographic-video/ng/untitled.ts",
+		"/D/Document/ionic/geographic-video/ng/module.ts",
+		"/D/Document/ionic/geographic-video/.bowerrc",
+		"/D/Document/Monaca_Projects/Hello Worldアプリ/www/css/style.css",
+		"/D/Document/Monaca_Projects/Hello Worldアプリ/www/phonegap-demo/main.js",
+		"/D/Document/USB/授業/2年後期/インタラクションデザイン/interaction_design.txt",
+		"/D/Document/ionic/testproject/package.json",
+		"/D/Document/ionic/testproject/ionic.project",
+		"/D/Document/Monaca_Projects/Hello Worldアプリ/www/index.html",
+		"/D/Document/Monaca_Projects/Hello Worldアプリ/www/phonegap-demo/master.css",
+		"/D/Document/Monaca_Projects/Hello Worldアプリ/www/phonegap-demo.html",
+		"/D/Document/ionic/testproject/bower.json",
+		"/D/Document/Monaca_Projects/Hello Worldアプリ/.monaca/project_info.json",
+		"/D/Document/Monaca_Projects/Hello Worldアプリ/config.xml",
+		"/D/Document/Monaca_Projects/Hello Worldアプリ/www/components/loader.css",
+		"/D/Document/Monaca_Projects/Hello Worldアプリ/www/components/loader.js",
+		"/D/Document/GoogleDrive/SHUKATSU/富士フィルム/ES.txt",
+		"/D/Document/新しいフォルダー/etc/CG等/16-150804-RJ152641.zip/About.txt",
+		"/D/Document/GoogleDrive/SHUKATSU/チームラボ/16年度WEBエンジニア・スマートフォンエンジニア三度の飯よりものづくりが好き枠.txt",
+		"/D/Document/Dropbox/etc/portfolio/素材/smartphone96.svg",
+		"/D/Document/USB/HP/be-into(portfolio)/build/gunman.html",
+		"/D/Document/USB/HP/be-into(portfolio)/gulpfile.js",
+		"/D/Document/USB/HP/be-into(portfolio)/favicon.svg",
+		"/D/Document/USB/HP/be-into(portfolio)/build/css/style.css",
+		"/D/Document/USB/HP/be-into(portfolio)/sublime-gulp.log",
+		"/D/Document/USB/HP/be-into(portfolio)/build/images/loading.svg",
+		"/D/Document/USB/HP/be-into(portfolio)/build/images/logo.svg",
+		"/D/Document/USB/HP/be-into(portfolio)/assets/images/loading.svg",
+		"/D/Document/USB/HP/be-into(portfolio)/assets/images/logo.svg",
+		"/D/Document/USB/HP/be-into(portfolio)/build/2ken.html",
+		"/D/Document/USB/HP/be-into(portfolio)/build/vvvvj.html",
+		"/D/Document/USB/HP/be-into(portfolio)/build/theater.html",
+		"/D/Document/USB/HP/be-into(portfolio)/build/rss.html",
+		"/D/Document/USB/HP/be-into(portfolio)/build/negi-climbing.html",
+		"/D/Document/USB/HP/be-into(portfolio)/build/move.html",
+		"/D/Document/USB/HP/be-into(portfolio)/build/limit-break.html",
+		"/C/Users/yusuke/AppData/Roaming/Sublime Text 3/Packages/OmniMarkupPreviewer/Default (Windows).sublime-keymap",
+		"/C/Users/yusuke/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/D/Document/USB/授業/3年前期/IIF/ar/towerGame/build-tmp/source/towerGame.java",
+		"/D/Document/USB/授業/3年前期/IIF/ar/hyuu-towergame-iif-ce36e0b1c3f0/readme.text",
+		"/D/Document/USB/HP/be-into(portfolio)/assets/move.html",
+		"/D/Document/USB/HP/be-into(portfolio)/assets/limit-break.html",
+		"/D/Document/USB/HP/be-into(portfolio)/assets/index7.html",
+		"/D/Document/USB/HP/be-into(portfolio)/assets/index6.html",
+		"/D/Document/USB/HP/be-into(portfolio)/assets/index5.html",
+		"/D/Document/USB/HP/be-into(portfolio)/assets/index4.html",
+		"/D/Document/USB/HP/be-into(portfolio)/assets/index2.html",
+		"/D/Document/USB/HP/be-into(portfolio)/assets/index3.html",
+		"/D/Document/USB/HP/Move_limit-break/assets/js/script.js",
+		"/D/Document/USB/HP/be-into(portfolio)/.gitignore",
+		"/D/Document/GoogleDrive/SHUKATSU/BIRDMAN/entry.txt",
+		"/D/Document/GoogleDrive/SHUKATSU/チームラボ/WEB_ES等.txt",
+		"/C/Users/yusuke/AppData/Roaming/Sublime Text 3/Packages/Gulp/Gulp.sublime-settings",
+		"/C/Users/yusuke/AppData/Roaming/Sublime Text 3/Packages/Gulp/Default (Windows).sublime-keymap",
+		"/D/Document/GoogleDrive/SHUKATSU/大広九州/大広九州エントリーシート.txt",
+		"/C/Users/yusuke/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/D/Document/USB/HP/instantwordpress/InstantWP_4.4.2/iwpserver/htdocs/wordpress/wp-content/themes/be-into/footer.php",
+		"/D/Document/USB/HP/instantwordpress/InstantWP_4.4.2/iwpserver/htdocs/wordpress/wp-content/themes/be-into/gulpfile.js",
+		"/D/Document/USB/HP/instantwordpress/InstantWP_4.4.2/iwpserver/htdocs/wordpress/wp-config.php",
+		"/D/Document/USB/HP/instantwordpress/InstantWP_4.4.2/iwpserver/htdocs/wordpress/wp-includes/class-snoopy.php",
+		"/D/Document/USB/HP/instantwordpress/InstantWP_4.4.2/iwpserver/htdocs/wordpress/wp-content/themes/be-into/functions.php",
+		"/D/Document/USB/HP/instantwordpress/InstantWP_4.4.2/iwpserver/pms_config.ini",
+		"/C/Users/yusuke/AppData/Roaming/Sublime Text 3/Local/Session.sublime_session"
 	],
 	"find":
 	{
-		"height": 38.0
+		"height": 28.0
 	},
 	"find_in_files":
 	{
-		"height": 106.0,
+		"height": 112.0,
 		"where_history":
 		[
-			"",
-			"app/",
-			"./"
+			"../assets",
+			"./assets",
+			"assets",
+			""
 		]
 	},
 	"find_state":
@@ -172,19 +285,53 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"height: 100%;",
-			"html,body",
-			"ActionSheet",
-			"top",
-			"main",
-			"\">",
-			"\n        ",
-			"isLeft",
-			"Hands.isLeft",
-			"isLeft",
-			"Hand",
-			"　2016年新卒採用係",
-			"コース"
+			"list",
+			"li",
+			"ul",
+			"$",
+			"lng2",
+			"lat2",
+			"lng1",
+			"lat1",
+			".pipe(",
+			"fa fa-safari\"></i><span class=\"browser__version f-montserrat\">latest</span>",
+			"<img src=\"images/loading.svg\" alt=\"\" class=\"loading\">",
+			"Content",
+			"ball-scale",
+			"22",
+			"    padding-top: 10px;\n",
+			"left",
+			"02",
+			"01",
+			"pic01.jpg",
+			"images/gunman_thumb.png",
+			"images/gunman_thumb.jpg",
+			"07",
+			"21",
+			"20",
+			"19",
+			"18",
+			"17",
+			"06",
+			"07",
+			"06",
+			"07",
+			"06",
+			"07",
+			"06",
+			"07",
+			"06",
+			"07",
+			"06",
+			"ss07",
+			"ss06",
+			"c-",
+			"font-weight: bold;",
+			"$thumb-size;",
+			"Wrap",
+			"ctt__item",
+			"card__",
+			"\"/\",\n"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -192,6 +339,10 @@
 		"regex": false,
 		"replace_history":
 		[
+			"fa fa-safari\"></i><span class=\"browser__version f-montserrat\">8 -</span>",
+			"<div class=\"loading\">\n  <div></div>\n</div>",
+			"images/gunman_thumb.jpg",
+			"images/gunman_thumb.png"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -202,79 +353,38 @@
 	"folders":
 	[
 		{
-			"path": "/Users/himeno/Documents/ionic/GeographicVideo"
+			"path": "D:\\Document\\ionic\\geographic-video"
 		}
 	],
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "gulp/scripts.js",
+					"file": "src/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 512,
+						"buffer_size": 1772,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								349,
-								349
+								1329,
+								1329
 							]
 						],
 						"settings":
 						{
 							"BracketHighlighterBusy": false,
-							"WordCountShouldRun": false,
-							"WordCountSyntax": "javascript",
+							"auto_complete": false,
 							"bh_regions":
 							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
@@ -285,109 +395,154 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content"
-							],
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "html/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1024,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								145,
-								145
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"WordCountShouldRun": true,
-							"WordCountSyntax": "html",
-							"bh_regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
-								"bh_tag_content"
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
 							],
 							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
 							"is_xml": false,
 							"origin_encoding": "ASCII",
 							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 540.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "src/js/module.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 757,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								261,
+								261
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -400,68 +555,26 @@
 				},
 				{
 					"buffer": 2,
-					"file": "html/navi.html",
+					"file": "www/data/location.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 321,
+						"buffer_size": 481,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								31,
-								31
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"BracketHighlighterBusy": false,
-							"WordCountShouldRun": true,
-							"WordCountSyntax": "plain text",
 							"bh_regions":
 							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
@@ -472,17 +585,55 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
-								"bh_tag_content"
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
 							],
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
-							"is_xml": false,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -490,299 +641,17 @@
 					},
 					"stack_index": 2,
 					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "gulp/watch.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 204,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								27,
-								27
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"WordCountShouldRun": false,
-							"WordCountSyntax": "javascript",
-							"bh_regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content"
-							],
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 4,
-					"file": "ng/module.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2847,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2716,
-								2716
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"WordCountShouldRun": false,
-							"WordCountSyntax": "javascript",
-							"bh_regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content"
-							],
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
-							"origin_encoding": "ASCII",
-							"spell_check": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1044.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "scss/ionic.app.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 895,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								615,
-								614
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"WordCountShouldRun": true,
-							"WordCountSyntax": "scss",
-							"bh_regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content"
-							],
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Seti_UI/Langs/SCSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 25.0
+		"height": 28.0
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 40.0
 	},
 	"layout":
 	{
@@ -804,7 +673,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.536570773716,
 			1.0
 		],
 		"rows":
@@ -818,15 +687,27 @@
 	{
 		"height": 0.0
 	},
+	"output.errorlist":
+	{
+		"height": 128.0
+	},
+	"output.exec":
+	{
+		"height": 128.0
+	},
 	"output.find_results":
 	{
 		"height": 0.0
 	},
-	"pinned_build_system": "",
+	"output.gulp_output":
+	{
+		"height": 108.0
+	},
+	"pinned_build_system": "Packages/Java/JavaC.sublime-build",
 	"project": "",
 	"replace":
 	{
-		"height": 46.0
+		"height": 52.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -846,7 +727,11 @@
 		[
 			[
 				"",
-				"~/Documents/ionic/GeographicVideo/ng/gepgraphic-video.sublime-workspace"
+				"D:\\Document\\USB\\HP\\be-into(portfolio)\\beinto(portfolio).sublime-workspace"
+			],
+			[
+				"b",
+				"D:\\Document\\USB\\HP\\instantwordpress\\InstantWP_4.4.2\\iwpserver\\htdocs\\wordpress\\wp-content\\themes\\be-into\\beinto.sublime-workspace"
 			]
 		],
 		"width": 380.0
@@ -860,7 +745,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},
@@ -868,7 +753,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 185.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
