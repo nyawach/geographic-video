@@ -5,10 +5,10 @@ var gulp = require('gulp'),
 
 /* Sass(SCSS)ビルド */
 gulp.task('sass', function() {
-    gulp.src('./scss/ionic.app.scss')
+    gulp.src('./src/scss/**/*.scss')
         .pipe(plugins.plumber())
         // 差分ファイルのみ次のストリームに流す
-        .pipe(plugins.changed('./scss/**/.scss'))
+        .pipe(plugins.changed('./src/scss/**/.scss'))
         // Compile .scss file
         .pipe(plugins.sass())
         // autoprefixer, media-query packer, altenative rem font-size, etc.
@@ -35,6 +35,6 @@ gulp.task('sass', function() {
 
 /* Style Stats でCSSの評価 */
 gulp.task('stats', function(){
-    gulp.src('./www/css/ionic.app.css')
+    gulp.src('./www/css/*.css')
         .pipe(plugins.stylestats());
 });
