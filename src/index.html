@@ -74,8 +74,61 @@
       <ons-back-button>Back</ons-back-button>
     </p>
     <div class="center">Map</div>
+    <p class="right">
+      <ons-toolbar-button ng-click="showDialogToVideo()">Next</ons-toolbar-button>
+    </p>
   </ons-toolbar>
   <div id="map"></div>
+</ons-page>
+
+</ons-template>
+<!-- / マップページ -->
+
+<!-- ダイアログボックス(ナビゲーション) -->
+<ons-template id="dialog_navi.html">
+
+<ons-dialog style="height: 220px;" var="mapDialog" cancelable>
+
+  <ons-toolbar inline>
+    <div class="center">
+      動画を発見！
+    </div>
+  </ons-toolbar>
+  <div style="text-align: center; padding: 0 20px;">
+    <p>
+      この動画を観ますか？
+    </p>
+    <p>
+      <ons-button ng-click="mapDialog.hide()" modifier="outline">キャンセル</ons-button>
+    </p>
+    <p>
+      <ons-button ng-click="goVideo()" modifier="large">観てみる</ons-button>
+    </p>
+  </div>
+
+</ons-dialog>
+
+</ons-template>
+<!-- / ダイアログボックス(ナビゲーション) -->
+
+<!-- マップページ -->
+<ons-template id="video.html">
+
+<ons-page ng-controller="videoCtrl">
+
+  <ons-toolbar>
+    <p class="left">
+      <ons-back-button>Back</ons-back-button>
+    </p>
+    <div class="center">VIDEO</div>
+    <p class="right">
+      <ons-toolbar-button ng-click="backToTop()">次の場所へ！</ons-toolbar-button>
+    </p>
+  </ons-toolbar>
+  <div id="video">
+    <iframe width="560" height="315" src="{{videoURL}}" frameborder="0" allowfullscreen></iframe>
+  </div>
+
 </ons-page>
 
 </ons-template>
