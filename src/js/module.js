@@ -60,52 +60,68 @@ app.controller('listCtrl', function($scope){
 */
 app.controller('mapCtrl', function($scope, $timeout){
 
-  $timeout(function(){
-    
+  ons.ready(function() {
+
+    // gv data
     var l = $scope.locations[$scope.distID];
 
     var current = {
-      lat: 33.562001,
-      lng: 130.430419
+      lat: l.lat,
+      lng: l.lng,
+      accuracy: 10
     };
 
+    // initialize google map by gMaps.js
     var map = new GMaps({
       div: '#map',
-      lat: current.lat,
-      lng: current.lng,
+      lat: l.lat,
+      lng: l.lng,
       zoom: 17
     });
-
-
-    var onSuccess = function(position){
-      var lat = position.coords.latitude,
-          lng = position.coords.longitude;
-      current.lat = lat;
-      current.lng = lng;
-      map.setCenter(lat, lng, function(){
-        map.addMarker({lat: lat, lng: lng});
-      });
-    };
-    var onError = function(message){
-      alert("現在位置を取得できませんでした。");
-    };
-    var option = {
-      frequency: 5000,
-      timeout: 6000
-    };
-    navigator.geolocation.getCurrentPosition(onSuccess, onError, option);
-
-
     var distMarker = map.createMarker({
       lat: l.lat,
-      lng: l.lng
+      lng: l.lng,
+      infoWindow: {
+        content: 'ここ!'
+      }
     });
 
     map.addMarker(distMarker);
 
-  }, 300);
 
-  ons.ready(function() {
+    // GPSの設定 (成功時、エラー時、更新頻度などのオプション)
+    var onSuccess = function(position){
+
+      current.lat = position.coords.latitude;
+      current.lng = position.coords.longitude;
+      current.accuracy = position.coords.accuracy;
+
+      var currentPosMarker = map.createMarker({
+        lat: current.lat,
+        lng: current.lng
+      });
+
+      map.setCenter(current.lat, current.lng, function(){
+        map.removeMarkers();
+        map.addMarker(distMarker);
+        map.addMarker(currentPosMarker);
+      });
+
+      // if(distanceBetween(l, current)) $scope.showDialogToVideo();
+    };
+
+    var onError = function(message){
+      alert("現在位置を取得できませんでした。GPS機能を有効にしてください");
+    };
+
+    var init = function() {
+      if (typeof(navigator.geolocation) != 'undefined')
+        setTimeout(navigator.geolocation.watchPosition(onSuccess, onError), 1000);
+    };
+    
+    init();
+
+
     $scope.showDialogToVideo = function(){
       ons.createDialog('dialog_navi.html', {parentScope: $scope})
         .then(function(dialog) {
@@ -113,8 +129,10 @@ app.controller('mapCtrl', function($scope, $timeout){
         });
     };
     $scope.goVideo = function() {
-      $scope.mainNav.pushPage('video.html');
+      // 位置情報の追跡を中止する
+      navigator.geolocation.clearWatch(init);
       $scope.mapDialog.hide();
+      $scope.mainNav.pushPage('video.html');
     };
   });
 
@@ -128,7 +146,11 @@ app.controller('mapCtrl', function($scope, $timeout){
 app.controller('videoCtrl', function($scope){
 
   $scope.videoURL = 'https://www.youtube.com/embed/' + $scope.locations[$scope.distID].videoID + '?rel=0';
+
   $scope.backToTop = function() {
-      $scope.mainNav.pushPage('index.html');
+      var options = {
+        animation: 'slide'
+      };
+      $scope.mainNav.resetToPage('list.html', options);
   }
 });

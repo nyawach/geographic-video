@@ -16,9 +16,18 @@
 </head>
 <body ng-controller="mainCtrl">
 
-<ons-navigator var="mainNav">
+
+<ons-navigator page="list.html" var="mainNav">
+
+<ons-page>
+</ons-page>
+
+</ons-navigator>
+
 
 <!-- リストページ -->
+<ons-template id="list.html">
+
 <ons-page ng-controller="listCtrl">
 
   <ons-toolbar>
@@ -26,15 +35,14 @@
   </ons-toolbar>
   <ons-scroller>
     <ons-list>
-      <ons-list-item ng-repeat="location in locations" ng-click="showDialog($index)" modifier="tappable">{{location.name}}</ons-list-item>
+      <ons-list-item ng-repeat="location in locations" ng-click="showDialog($index)" modifier="chevron">{{location.name}}</ons-list-item>
     </ons-list>
   </ons-scroller>
 
 </ons-page>
+
+</ons-template>
 <!-- / リストページ -->
-
-</ons-navigator>
-
 
 <!-- ダイアログボックス -->
 <ons-template id="dialog.html">
@@ -51,10 +59,10 @@
       この場所に行きますか？
     </p>
     <p>
-      <ons-button ng-click="naviDialog.hide()" modifier="outline">別のところにする</ons-button>
+      <ons-button ng-click="goMap()" modifier="large">行ってみる</ons-button>
     </p>
     <p>
-      <ons-button ng-click="goMap()" modifier="large">行ってみる</ons-button>
+      <ons-button style="width: 100%;" ng-click="naviDialog.hide()" modifier="outline">別のところにする</ons-button>
     </p>
   </div>
 
@@ -99,10 +107,10 @@
       この動画を観ますか？
     </p>
     <p>
-      <ons-button ng-click="mapDialog.hide()" modifier="outline">キャンセル</ons-button>
+      <ons-button ng-click="goVideo()" modifier="large">観てみる</ons-button>
     </p>
     <p>
-      <ons-button ng-click="goVideo()" modifier="large">観てみる</ons-button>
+      <ons-button style="width: 100%;" ng-click="mapDialog.hide()" modifier="outline">キャンセル</ons-button>
     </p>
   </div>
 
@@ -111,7 +119,7 @@
 </ons-template>
 <!-- / ダイアログボックス(ナビゲーション) -->
 
-<!-- マップページ -->
+<!-- ビデオページ -->
 <ons-template id="video.html">
 
 <ons-page ng-controller="videoCtrl">
