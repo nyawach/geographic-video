@@ -58,35 +58,36 @@ app.controller('listCtrl', function($scope){
   マップビュー用Controller
   GPS接続の許可・更新、マップ表示、班内判定など
 */
-app.controller('mapCtrl', function($scope, $timeout){
+app.controller('mapCtrl', function($scope){
+
+  // gv data
+  var l = $scope.locations;
+
+  var current = {
+    lat: 0,
+    lng: 0,
+    accuracy: 10
+  };
+
+  // initialize google map by gMaps.js
+  var map = new GMaps({
+    div: '#map',
+    lat: 138.21243,
+    lng: 35.4123,
+    zoom: 17
+  });
+  var distMarker = map.createMarker({
+    lat: 138.21243,
+    lng: 138.21243,
+    infoWindow: {
+      content: 'ここ!'
+    }
+  });
+
+  map.addMarker(distMarker);
 
   ons.ready(function() {
 
-    // gv data
-    var l = $scope.locations[$scope.distID];
-
-    var current = {
-      lat: l.lat,
-      lng: l.lng,
-      accuracy: 10
-    };
-
-    // initialize google map by gMaps.js
-    var map = new GMaps({
-      div: '#map',
-      lat: l.lat,
-      lng: l.lng,
-      zoom: 17
-    });
-    var distMarker = map.createMarker({
-      lat: l.lat,
-      lng: l.lng,
-      infoWindow: {
-        content: 'ここ!'
-      }
-    });
-
-    map.addMarker(distMarker);
 
 
     // GPSの設定 (成功時、エラー時、更新頻度などのオプション)
