@@ -3,37 +3,45 @@
 <head>
 
 <meta charset="utf-8">
+<title>記憶探索</title>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 
 <link rel="stylesheet" href="lib/onsen/css/onsenui.css"/>
 <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css"/>
 <link rel="stylesheet" href="css/style.min.css">
 
 <script src="lib/angular/angular.min.js"></script>
+<script src="lib/angular-resource/angular-resource.min.js"></script>
 <script src="lib/onsen/js/onsenui.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAYRHcmRFnqqcwIOLNxijXV07_3KpHs9FA&libraries=geometry"></script>
 <script src="js/app.js"></script>
 
 </head>
 <body ng-controller="mainCtrl">
 
-<ons-sliding-menu
-  main-page="map.html"
-  menu-page="menu.html"
-  side="left"
-  var="mainNav"
->
-</ons-sliding-menu>
+<!--**********
+    リストページ
+***********-->
+<ons-navigator var="mainNav">
 
-<ons-template id="menu.html">
-  <ons-list>
-    <ons-list-item modifier="chevron" onclick="mainNav.setMainPage('map.html', {closeMenu: true})">
-      MAP
-    </ons-list-item>
-    <ons-list-item modifier="chevron" onclick="mainNav.setMainPage('list.html', {closeMenu: true})">
-      LIST
-    </ons-list-item>
-  </ons-list>
-</ons-template>
+<!-- マップページ(初期表示) -->
+<ons-page ng-controller="mapCtrl">
+  <ons-toolbar>
+    <div class="center">Map</div>
+<!--
+    <p class="right">
+      <ons-toolbar-button onclick="mainNav.pushPage('list.html')">Next</ons-toolbar-button>
+    </p>
+ -->
+  </ons-toolbar>
+  <div id="map"></div>
+</ons-page>
+<!-- / マップページ -->
+
+</ons-navigator>
+<!--**********
+    リストページ
+***********-->
 
 
 <!-- リストページ -->
@@ -43,7 +51,7 @@
 
   <ons-toolbar>
     <div class="left">
-      <ons-toolbar-button onclick="mainNav.toggleMenu()"><ons-icon icon="fa-bars"></ons-icon></ons-toolbar-button>
+      <ons-toolbar-button onclick="mainNav.popPage('map.html')"><ons-icon icon="fa-bars"></ons-icon></ons-toolbar-button>
     </div>
     <div class="center">Title</div>
   </ons-toolbar>
@@ -58,53 +66,6 @@
 </ons-template>
 <!-- / リストページ -->
 
-<!-- ダイアログボックス -->
-<ons-template id="dialog.html">
-
-<ons-dialog style="height: 220px;" var="naviDialog" cancelable>
-
-  <ons-toolbar inline>
-    <div class="center">
-      {{distName}}
-    </div>
-  </ons-toolbar>
-  <div style="text-align: center; padding: 0 20px;">
-    <p>
-      この場所に行きますか？
-    </p>
-    <p>
-      <ons-button ng-click="goMap()" modifier="large">行ってみる</ons-button>
-    </p>
-    <p>
-      <ons-button style="width: 100%;" ng-click="naviDialog.hide()" modifier="outline">別のところにする</ons-button>
-    </p>
-  </div>
-
-</ons-dialog>
-
-</ons-template>
-<!-- / ダイアログボックス -->
-
-
-<!-- マップページ -->
-<ons-template id="map.html">
-
-<ons-page ng-controller="mapCtrl">
-
-  <ons-toolbar>
-    <div class="left">
-      <ons-toolbar-button onclick="mainNav.toggleMenu()"><ons-icon icon="fa-bars"></ons-icon></ons-toolbar-button>
-    </div>
-    <div class="center">Map</div>
-    <p class="right">
-      <ons-toolbar-button ng-click="showDialogToVideo()">Next</ons-toolbar-button>
-    </p>
-  </ons-toolbar>
-  <div id="map"></div>
-</ons-page>
-
-</ons-template>
-<!-- / マップページ -->
 
 <!-- ダイアログボックス(ナビゲーション) -->
 <ons-template id="dialog_navi.html">
@@ -132,29 +93,6 @@
 
 </ons-template>
 <!-- / ダイアログボックス(ナビゲーション) -->
-
-<!-- ビデオページ -->
-<ons-template id="video.html">
-
-<ons-page ng-controller="videoCtrl">
-
-  <ons-toolbar>
-    <p class="left">
-      <ons-back-button>Back</ons-back-button>
-    </p>
-    <div class="center">VIDEO</div>
-    <p class="right">
-      <ons-toolbar-button ng-click="backToTop()">次の場所へ！</ons-toolbar-button>
-    </p>
-  </ons-toolbar>
-  <div id="video">
-    <iframe width="560" height="315" src="{{videoURL}}" frameborder="0" allowfullscreen></iframe>
-  </div>
-
-</ons-page>
-
-</ons-template>
-<!-- / マップページ -->
 
 </body>
 </html>
