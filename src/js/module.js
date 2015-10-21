@@ -64,7 +64,7 @@ var data = $resource('./data/location.json').query(function(d){
     div: '#map',
     lat: 33.6308835,
     lng: 130.527575,
-    zoom: 17
+    zoom: 12
   });
 
 
@@ -85,6 +85,7 @@ var data = $resource('./data/location.json').query(function(d){
         lat: memoryData.lat,
         lng: memoryData.lng,
         visible: false,
+        clickable: false,
         icon: 'images/icon_memory.png',
         infoWindow: {
           content: '<a href="https://www.youtube.com/watch?v='
@@ -112,7 +113,8 @@ var data = $resource('./data/location.json').query(function(d){
         if( isNearBy(memories[i]) ) {
           memories[i].setOptions({
             visible: true,
-            opacity: 1.0
+            clickable: true,
+            opacity: 1.0,
           });
         }
         else if( isAround(memories[i]) ) {
